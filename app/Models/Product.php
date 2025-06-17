@@ -19,12 +19,13 @@ class Product extends Model
         'sale_price',
         'date_in',
         'image',
+        'image_url',
         'rack_id',
         'shelf_id',
         'supplier_id',
     ];
-    
-    
+
+
 
     // Relationship with Category
     public function category()
@@ -34,9 +35,9 @@ class Product extends Model
 
     // Relationship with Warehouse
     public function warehouse()
-{
-    return $this->belongsTo(Warehouse::class, 'warehouse_id');
-}
+    {
+        return $this->belongsTo(Warehouse::class, 'warehouse_id');
+    }
     // Relationship with Stock
     public function stock()
     {
@@ -44,19 +45,19 @@ class Product extends Model
     }
 
     public function rack()
-{
-    return $this->belongsTo(Rack::class);
-}
+    {
+        return $this->belongsTo(Rack::class);
+    }
 
-public function shelf()
-{
-    return $this->belongsTo(Shelf::class);
-}
+    public function shelf()
+    {
+        return $this->belongsTo(Shelf::class);
+    }
 
-public function supplier()
-{
-    return $this->belongsTo(Supplier::class);
-}
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class);
+    }
 
 
 }
